@@ -9,6 +9,15 @@
     <link rel="stylesheet" href="build/css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed&display=swap" rel="stylesheet">
     <title>Document</title>
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+          // Use the window load event to keep the page load performant
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('build/sw.js ');
+          });
+        }
+    </script>
 </head>
 <body>
     <h1>Our Users</h1>
@@ -19,14 +28,6 @@
 
     <script async src="build/js/app.js"></script>
 
-    <script>
-            // Check that service workers are supported
-            if ('serviceWorker' in navigator) {
-              // Use the window load event to keep the page load performant
-              window.addEventListener('load', () => {
-                navigator.serviceWorker.register('build/sw.js ');
-              });
-            }
-    </script>
+
 </body>
 </html>
